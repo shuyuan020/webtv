@@ -1095,8 +1095,8 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 SubMenuLocal.setVisibility(View.VISIBLE);
                 findViewById(R.id.LocalScroll).setVisibility(View.VISIBLE);
-                SubMenuLocal.getChildAt(currentLiveIndex - 21).requestFocus();
-                SubMenuLocalSelectedIndex = currentLiveIndex - 21;
+                SubMenuLocal.getChildAt(currentLiveIndex - 20).requestFocus();
+                SubMenuLocalSelectedIndex = currentLiveIndex - 20;
                 DrawerLayoutSelectedIndex = 1;
             }
         } else {
@@ -1125,8 +1125,8 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 SubMenuLocal.setVisibility(View.VISIBLE);
                 findViewById(R.id.LocalScroll).setVisibility(View.VISIBLE);
-                SubMenuLocal.getChildAt(selectIndex - 21).requestFocus();
-                SubMenuLocalSelectedIndex = selectIndex - 21;
+                SubMenuLocal.getChildAt(selectIndex - 20).requestFocus();
+                SubMenuLocalSelectedIndex = selectIndex - 20;
                 DrawerLayoutSelectedIndex = 1;
             }
         } else {
@@ -1205,7 +1205,7 @@ public class MainActivity extends AppCompatActivity {
 
             getCurrentWebview().setInitialScale(getMinimumScale());
             getCurrentWebview().loadUrl(liveUrls[currentLiveIndex]);
-            if (currentLiveIndex > 19) {
+            if (currentLiveIndex > 20) {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
