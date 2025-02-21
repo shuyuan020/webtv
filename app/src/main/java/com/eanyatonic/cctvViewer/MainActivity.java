@@ -698,7 +698,7 @@ public class MainActivity extends AppCompatActivity {
     // 获取 div 元素的 display 属性并执行相应的操作
     private void getDivDisplayPropertyAndDoSimulateTouch() {
         if (webView0 != null) {
-            if (currentLiveIndex <= 19) {
+            if (currentLiveIndex <= 20) {
                 webView0.evaluateJavascript("document.getElementById('play_or_pause_play_player').style.display",
                         value -> {
                             // 处理获取到的 display 属性值
@@ -707,7 +707,7 @@ public class MainActivity extends AppCompatActivity {
                                 simulateTouch(webView0, 0.5f, 0.5f);
                             }
                         });
-            } else if (currentLiveIndex <= 40) {
+            } else if (currentLiveIndex <= 41) {
                 String scriptPlay = """
                         try{
                         if(document.querySelector('.voice.on').style.display == 'none'){
@@ -766,9 +766,9 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case 1:
                             // 播放
-                            if (currentLiveIndex <= 19) {
+                            if (currentLiveIndex <= 20) {
                                 simulateTouch(getCurrentWebview(), 0.5f, 0.5f);
-                            } else if (currentLiveIndex <= 40) {
+                            } else if (currentLiveIndex <= 41) {
                                 String scriptPause = """
                                         try{
                                         document.querySelector('.play.play2').click();
@@ -796,9 +796,9 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                     """;
 
-                            if (currentLiveIndex <= 19) {
+                            if (currentLiveIndex <= 20) {
                                 getCurrentWebview().evaluateJavascript(script1, null);
-                            } else if (currentLiveIndex <= 40) {
+                            } else if (currentLiveIndex <= 41) {
                                 new Handler().postDelayed(() -> {
                                     getCurrentWebview().evaluateJavascript(script2, null);
                                 }, 500);
@@ -990,12 +990,12 @@ public class MainActivity extends AppCompatActivity {
                     // 方向键,切换频道选择
                     if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_UP) {
                         if (SubMenuLocalSelectedIndex == 0) {
-                            SubMenuLocalSelectedIndex = 20;
+                            SubMenuLocalSelectedIndex = 21;
                         } else {
                             SubMenuLocalSelectedIndex--;
                         }
                     } else if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_DOWN) {
-                        if (SubMenuLocalSelectedIndex == 20) {
+                        if (SubMenuLocalSelectedIndex == 21) {
                             SubMenuLocalSelectedIndex = 0;
                         } else {
                             SubMenuLocalSelectedIndex++;
@@ -1007,7 +1007,7 @@ public class MainActivity extends AppCompatActivity {
                         || event.getKeyCode() == KeyEvent.KEYCODE_ENTER
                         || event.getKeyCode() == KeyEvent.KEYCODE_DPAD_RIGHT) {
                     // 中间键,执行按钮操作
-                    currentLiveIndex = SubMenuLocalSelectedIndex + 20;
+                    currentLiveIndex = SubMenuLocalSelectedIndex + 21;
                     loadLiveUrl();
                     saveCurrentLiveIndex();
                     showChannelList();
@@ -1087,7 +1087,7 @@ public class MainActivity extends AppCompatActivity {
             DrawerLayoutDetailed.setVisibility(View.VISIBLE);
             DrawerLayout.setVisibility(View.VISIBLE);
             isDrawerOverlayVisible = true;
-            if (currentLiveIndex < 20) {
+            if (currentLiveIndex < 21) {
                 SubMenuCCTV.setVisibility(View.VISIBLE);
                 findViewById(R.id.CCTVScroll).setVisibility(View.VISIBLE);
                 SubMenuCCTV.getChildAt(currentLiveIndex).requestFocus();
@@ -1096,8 +1096,8 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 SubMenuLocal.setVisibility(View.VISIBLE);
                 findViewById(R.id.LocalScroll).setVisibility(View.VISIBLE);
-                SubMenuLocal.getChildAt(currentLiveIndex - 20).requestFocus();
-                SubMenuLocalSelectedIndex = currentLiveIndex - 20;
+                SubMenuLocal.getChildAt(currentLiveIndex - 21).requestFocus();
+                SubMenuLocalSelectedIndex = currentLiveIndex - 21;
                 DrawerLayoutSelectedIndex = 1;
             }
         } else {
@@ -1126,8 +1126,8 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 SubMenuLocal.setVisibility(View.VISIBLE);
                 findViewById(R.id.LocalScroll).setVisibility(View.VISIBLE);
-                SubMenuLocal.getChildAt(selectIndex - 20).requestFocus();
-                SubMenuLocalSelectedIndex = selectIndex - 20;
+                SubMenuLocal.getChildAt(selectIndex - 21).requestFocus();
+                SubMenuLocalSelectedIndex = selectIndex - 21;
                 DrawerLayoutSelectedIndex = 1;
             }
         } else {
@@ -1206,7 +1206,7 @@ public class MainActivity extends AppCompatActivity {
 
             getCurrentWebview().setInitialScale(getMinimumScale());
             getCurrentWebview().loadUrl(liveUrls[currentLiveIndex]);
-            if (currentLiveIndex > 19) {
+            if (currentLiveIndex > 20) {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
