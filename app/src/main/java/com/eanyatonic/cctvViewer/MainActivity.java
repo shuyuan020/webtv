@@ -1006,7 +1006,7 @@ public class MainActivity extends AppCompatActivity {
                         || event.getKeyCode() == KeyEvent.KEYCODE_ENTER
                         || event.getKeyCode() == KeyEvent.KEYCODE_DPAD_RIGHT) {
                     // 中间键,执行按钮操作
-                    currentLiveIndex = SubMenuLocalSelectedIndex + 21;
+                    currentLiveIndex = SubMenuLocalSelectedIndex + 20;
                     loadLiveUrl();
                     saveCurrentLiveIndex();
                     showChannelList();
@@ -1086,7 +1086,7 @@ public class MainActivity extends AppCompatActivity {
             DrawerLayoutDetailed.setVisibility(View.VISIBLE);
             DrawerLayout.setVisibility(View.VISIBLE);
             isDrawerOverlayVisible = true;
-            if (currentLiveIndex < 21) {
+            if (currentLiveIndex < 20) {
                 SubMenuCCTV.setVisibility(View.VISIBLE);
                 findViewById(R.id.CCTVScroll).setVisibility(View.VISIBLE);
                 SubMenuCCTV.getChildAt(currentLiveIndex).requestFocus();
@@ -1095,8 +1095,8 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 SubMenuLocal.setVisibility(View.VISIBLE);
                 findViewById(R.id.LocalScroll).setVisibility(View.VISIBLE);
-                SubMenuLocal.getChildAt(currentLiveIndex - 21).requestFocus();
-                SubMenuLocalSelectedIndex = currentLiveIndex - 21;
+                SubMenuLocal.getChildAt(currentLiveIndex - 20).requestFocus();
+                SubMenuLocalSelectedIndex = currentLiveIndex - 20;
                 DrawerLayoutSelectedIndex = 1;
             }
         } else {
@@ -1125,8 +1125,8 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 SubMenuLocal.setVisibility(View.VISIBLE);
                 findViewById(R.id.LocalScroll).setVisibility(View.VISIBLE);
-                SubMenuLocal.getChildAt(selectIndex - 21).requestFocus();
-                SubMenuLocalSelectedIndex = selectIndex - 21;
+                SubMenuLocal.getChildAt(selectIndex - 20).requestFocus();
+                SubMenuLocalSelectedIndex = selectIndex - 20;
                 DrawerLayoutSelectedIndex = 1;
             }
         } else {
